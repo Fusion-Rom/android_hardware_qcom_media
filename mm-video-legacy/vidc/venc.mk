@@ -9,6 +9,11 @@ LOCAL_PATH:= $(ROOT_DIR)
 # 				Common definitons
 # ---------------------------------------------------------------------------------
 
+ifeq ($(TARGET_USE_ION_COMPAT), true)
+libmm-venc-def += -D_ION_HEAP_MASK_COMPATIBILITY_WA
+endif
+
+
 libmm-venc-def += -D__align=__alignx
 libmm-venc-def += -D__alignx\(x\)=__attribute__\(\(__aligned__\(x\)\)\)
 libmm-venc-def += -DT_ARM

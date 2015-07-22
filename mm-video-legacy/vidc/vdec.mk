@@ -9,6 +9,10 @@ LOCAL_PATH:= $(ROOT_DIR)
 # 				Common definitons
 # ---------------------------------------------------------------------------------
 
+ifeq ($(TARGET_USE_ION_COMPAT), true)
+libmm-venc-def += -D_ION_HEAP_MASK_COMPATIBILITY_WA
+endif
+
 libOmxVdec-def += -D__align=__alignx
 libOmxVdec-def += -Dinline=__inline
 libOmxVdec-def += -DIMAGE_APPS_PROC
