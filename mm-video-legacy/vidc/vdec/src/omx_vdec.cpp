@@ -150,6 +150,14 @@ char ouputextradatafilename [] = "/data/extradata";
 #define ALIGN32 32
 #define ALIGN16 16
 
+
+
+#ifdef _ION_HEAP_MASK_COMPATIBILITY_WA
+#define ION_HEAP_MASK heap_mask
+#else
+#define ION_HEAP_MASK heap_id_mask
+#endif
+
 bool omx_vdec::m_secure_display = false;
 
 #ifdef MAX_RES_1080P

@@ -80,6 +80,14 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define ALIGN( num, to ) (((num) + (to-1)) & (~(to-1)))
 #define SZ_2K (2048)
 
+
+
+#ifdef _ION_HEAP_MASK_COMPATIBILITY_WA
+    #define ION_HEAP_MASK heap_mask
+#else
+    #define ION_HEAP_MASK heap_id_mask
+#endif
+
 typedef struct OMXComponentCapabilityFlagsType
 {
     ////////////////// OMX COMPONENT CAPABILITY RELATED MEMBERS

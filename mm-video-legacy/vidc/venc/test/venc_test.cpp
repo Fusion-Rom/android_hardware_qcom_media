@@ -75,6 +75,15 @@ REFERENCES
 // MACROS
 //////////////////////////
 
+
+
+#ifdef _ION_HEAP_MASK_COMPATIBILITY_WA
+#define ION_HEAP_MASK heap_mask
+#else
+#define ION_HEAP_MASK heap_id_mask
+#endif
+
+
 #define CHK(result) if (result != OMX_ErrorNone) { E("*************** error *************"); exit(0); }
 #define TEST_LOG
 #ifdef VENC_SYSLOG

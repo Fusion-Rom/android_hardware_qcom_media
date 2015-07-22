@@ -37,6 +37,12 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <linux/msm_ion.h>
 #endif
 
+#ifdef _ION_HEAP_MASK_COMPATIBILITY_WA
+#define ION_HEAP_MASK heap_mask
+#else
+#define ION_HEAP_MASK heap_id_mask
+#endif
+
 #define MPEG4_SP_START 0
 #define MPEG4_ASP_START (MPEG4_SP_START + 8)
 #define MPEG4_720P_LEVEL 6
